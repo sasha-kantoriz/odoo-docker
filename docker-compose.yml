@@ -1,7 +1,7 @@
 version: '3.1'
 services:
   web:
-    image: odoo:16.0
+    build: .
     depends_on:
       - db
     ports:
@@ -10,7 +10,6 @@ services:
     volumes:
       - odoo-web-data:/var/lib/odoo
       - ./config:/etc/odoo
-      - ./addons:/mnt/extra-addons
     environment:
       - PASSWORD_FILE=/run/secrets/postgresql_password
     secrets:
