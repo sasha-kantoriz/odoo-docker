@@ -9,6 +9,7 @@ services:
       - "8072:8072"
     volumes:
       - odoo-web-data:/var/lib/odoo
+      - ./addons:/mnt/extra-addons
       - ./config:/etc/odoo
     environment:
       - PASSWORD_FILE=/run/secrets/postgresql_password
